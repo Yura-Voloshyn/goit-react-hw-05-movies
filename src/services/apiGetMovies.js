@@ -15,3 +15,15 @@ export const getTrendingMovies = async () => {
 
   return response.data.results;
 };
+
+export const getMovieById = async id => {
+  const response = await axios.get(`${BASE_URL}movie/${id}?api_key=${API_KEY}`);
+  return response.data;
+};
+
+export const getMovieCredits = async id => {
+  const response = await axios.get(
+    `${BASE_URL}movie/${id}/credits?api_key=${API_KEY}`
+  );
+  return response.data.cast;
+};

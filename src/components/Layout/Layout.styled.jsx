@@ -2,16 +2,16 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
-  max-width: 600px;
   margin: 0 auto;
   padding: 0;
+  box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px,
+    rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
 `;
 
 export const Header = styled.header`
   display: flex;
   align-items: center;
   gap: 16px;
-  border-bottom: 1px solid #cacaca;
 
   > nav {
     display: flex;
