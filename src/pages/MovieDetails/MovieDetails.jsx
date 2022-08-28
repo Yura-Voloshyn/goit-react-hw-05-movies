@@ -25,7 +25,7 @@ const MovieDetails = () => {
   const genresForRender = genres
     ? genres.map(genre => genre.name).join(', ')
     : null;
-  console.log(genresForRender);
+
   let src =
     poster_path === null
       ? 'https://stringfixer.com/files/951711496.jpg'

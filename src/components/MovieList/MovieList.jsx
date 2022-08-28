@@ -6,7 +6,7 @@ import LoaderWrapper from 'components/Loader/Loader';
 const MovieList = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  console.log(trendingMovies);
   useEffect(() => {
     const getApiTrendingMovies = async () => {
       try {

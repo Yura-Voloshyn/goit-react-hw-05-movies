@@ -21,9 +21,9 @@ export const getMovieById = async id => {
   return response.data;
 };
 
-export const getMovieCredits = async id => {
+export const getMovieAdditionalInfo = async (id, keyword) => {
   const response = await axios.get(
-    `${BASE_URL}movie/${id}/credits?api_key=${API_KEY}`
+    `${BASE_URL}movie/${id}/${keyword}?api_key=${API_KEY}`
   );
-  return response.data.cast;
+  return response.data;
 };

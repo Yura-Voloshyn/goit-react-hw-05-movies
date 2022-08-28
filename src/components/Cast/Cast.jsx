@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovieCredits } from 'services/apiGetMovies';
+import { getMovieAdditionalInfo } from 'services/apiGetMovies';
 import { Img } from './Cast.styled';
 
 const Cast = () => {
@@ -10,8 +10,9 @@ const Cast = () => {
   useEffect(() => {
     const getApiMovieCreditsById = async id => {
       try {
-        const apiMovieById = await getMovieCredits(id);
-        setMovieCredits(apiMovieById);
+        const keyword = 'credits';
+        const apiMovieById = await getMovieAdditionalInfo(id, keyword);
+        setMovieCredits(apiMovieById.cast);
       } catch (error) {
         console.log(error);
       }
