@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieAdditionalInfo } from 'services/apiGetMovies';
+import PropTypes from 'prop-types';
 
 const Reviews = () => {
   const { id } = useParams();
   const [movieReview, setMovieReview] = useState([]);
-  console.log(movieReview);
+
   useEffect(() => {
     const getApiMovieReviewsById = async id => {
       try {
@@ -37,6 +38,14 @@ const Reviews = () => {
       </div>
     </section>
   );
+};
+
+Reviews.propTypes = {
+  element: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    author: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+  }),
 };
 
 export default Reviews;

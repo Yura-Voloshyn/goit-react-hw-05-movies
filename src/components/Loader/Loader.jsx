@@ -1,7 +1,7 @@
 import { Dna } from 'react-loader-spinner';
 import styled from 'styled-components';
 
-const LoaderWrapper = () => {
+const Loader = () => {
   return (
     <WrapLoad>
       <Dna
@@ -15,7 +15,7 @@ const LoaderWrapper = () => {
     </WrapLoad>
   );
 };
-export default LoaderWrapper;
+export default Loader;
 
 const WrapLoad = styled.div`
   margin-left: auto;

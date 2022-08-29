@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieAdditionalInfo } from 'services/apiGetMovies';
 import { Img } from './Cast.styled';
+import PropTypes from 'prop-types';
 
 const Cast = () => {
   const { id } = useParams();
   const [movieCredits, setMovieCredits] = useState([]);
-  console.log(movieCredits);
+
   useEffect(() => {
     const getApiMovieCreditsById = async id => {
       try {
@@ -42,6 +43,15 @@ const Cast = () => {
       </div>
     </section>
   );
+};
+
+Cast.propTypes = {
+  elements: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    character: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    profile_path: PropTypes.string.isRequired,
+  }),
 };
 
 export default Cast;
